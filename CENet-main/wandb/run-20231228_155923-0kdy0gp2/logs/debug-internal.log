@@ -1,0 +1,26 @@
+2023-12-28 15:59:23,874 INFO    StreamThr :21144 [internal.py:wandb_internal():89] W&B internal server running at pid: 21144, started at: 2023-12-28 15:59:23.873192
+2023-12-28 15:59:23,875 DEBUG   HandlerThread:21144 [handler.py:handle_request():146] handle_request: status
+2023-12-28 15:59:23,876 INFO    WriterThread:21144 [datastore.py:open_for_write():85] open: D:\paper\project\CENet-main\wandb\run-20231228_155923-0kdy0gp2\run-0kdy0gp2.wandb
+2023-12-28 15:59:23,878 DEBUG   SenderThread:21144 [sender.py:send():382] send: header
+2023-12-28 15:59:23,878 DEBUG   SenderThread:21144 [sender.py:send():382] send: run
+2023-12-28 15:59:24,879 INFO    WriterThread:21144 [datastore.py:close():294] close: D:\paper\project\CENet-main\wandb\run-20231228_155923-0kdy0gp2\run-0kdy0gp2.wandb
+2023-12-28 15:59:24,879 INFO    HandlerThread:21144 [handler.py:finish():866] shutting down handler
+2023-12-28 15:59:24,879 ERROR   StreamThr :21144 [internal.py:wandb_internal():174] Thread SenderThread:
+Traceback (most recent call last):
+  File "D:\software\Anaconda\lib\site-packages\wandb\sdk\internal\internal_util.py", line 49, in run
+    self._run()
+  File "D:\software\Anaconda\lib\site-packages\wandb\sdk\internal\internal_util.py", line 100, in _run
+    self._process(record)
+  File "D:\software\Anaconda\lib\site-packages\wandb\sdk\internal\internal.py", line 328, in _process
+    self._sm.send(record)
+  File "D:\software\Anaconda\lib\site-packages\wandb\sdk\internal\sender.py", line 389, in send
+    send_handler(record)
+  File "D:\software\Anaconda\lib\site-packages\wandb\sdk\internal\sender.py", line 947, in send_run
+    self._config_save(config_value_dict)
+  File "D:\software\Anaconda\lib\site-packages\wandb\sdk\internal\sender.py", line 905, in _config_save
+    config_util.save_config_file_from_dict(config_path, config_value_dict)
+  File "D:\software\Anaconda\lib\site-packages\wandb\sdk\lib\config_util.py", line 87, in save_config_file_from_dict
+    sort_keys=False,
+  File "D:\software\Anaconda\lib\site-packages\yaml\__init__.py", line 200, in dump
+    return dump_all([data], stream, Dumper=Dumper, **kwds)
+TypeError: dump_all() got an unexpected keyword argument 'sort_keys'
